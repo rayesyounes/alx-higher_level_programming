@@ -2,6 +2,7 @@
 """ module doc for rectangle """
 from models.base import Base
 
+
 class Rectangle(Base):
     """ class doc for rectangle """
 
@@ -64,9 +65,11 @@ class Rectangle(Base):
 
     def __str__(self):
         """ func doc """
-        return f"[Rectangle] ({self.id}) \ {self.__x}/{self.__y} - {self.__width}/{self.__height}"
+        return f"[Rectangle] ({self.id}) \
+{self.__x}/{self.__y} - {self.__width}/{self.__height}"
 
     def update(self, *args, **kwargs):
+        """ func doc """
         if len(args) == 0:
             id = kwargs["id"] if "id" in kwargs else self.id
             super().__init__(id)
@@ -84,6 +87,13 @@ class Rectangle(Base):
         self.checks(width, height, x, y)
         self.width = width
         self.height = height
+        self.x = x
+        self.y = y
+
+    def to_dictionary(self):
+        """ func doc """
+        return {'x': self.x, 'y': self.y, 'id': self.id,
+                'height': self.height, 'width': self.width}
 
     @property
     def width(self):

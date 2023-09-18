@@ -13,15 +13,16 @@ class Square(Rectangle):
     def __str__(self):
         """ func doc """
         return f"[Square] ({self.id}) \
-            {self.x}/{self.y} - {self.width}"
-
+{self.x}/{self.y} - {self.width}"
 
     @property
     def size(self):
+        """ func doc """
         return self.width
 
     @size.setter
     def size(self, val):
+        """ func doc """
         self.check_int("width", val)
         self.check_positive("width", val)
         self.width = val
@@ -44,3 +45,7 @@ class Square(Rectangle):
         self.width = size
         self.x = x
         self.y = y
+
+    def to_dictionary(self):
+        """ func doc """
+        return {'id': self.id, 'x': self.x, 'size': self.size, 'y': self.y}
