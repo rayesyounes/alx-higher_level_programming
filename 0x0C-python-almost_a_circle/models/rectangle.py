@@ -84,3 +84,51 @@ class Rectangle(Base):
         self.checks(width, height, x, y)
         self.width = width
         self.height = height
+
+    @property
+    def width(self):
+        """ func doc """
+        return self.__width
+
+    @width.setter
+    def width(self, val):
+        """ func doc """
+        self.check_int("width", val)
+        self.check_positive("width", val)
+        self.__width = val
+
+    @property
+    def height(self):
+        """ func doc """
+        return self.__height
+
+    @height.setter
+    def height(self, val):
+        """ func doc """
+        self.check_int("height", val)
+        self.check_positive("height", val)
+        self.__height = val
+
+    @property
+    def x(self):
+        """ func doc """
+        return self.__x
+
+    @x.setter
+    def x(self, val):
+        """ func doc """
+        self.check_int("x", val)
+        self.check_positive_zero("x", val)
+        self.__x = val
+
+    @property
+    def y(self):
+        """ func doc """
+        return self.__y
+
+    @y.setter
+    def y(self, val):
+        """ func doc """
+        self.check_int("y", val)
+        self.check_positive_zero("y", val)
+        self.__y = val
