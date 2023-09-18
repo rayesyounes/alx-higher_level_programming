@@ -39,3 +39,7 @@ class Rectangle(Base):
         self.check_positive("height", height)
         self.check_positive_zero("x", x)
         self.check_positive_zero("y", y)
+
+    def area(self):
+        """ func doc """
+        return self.__width * self.__height
