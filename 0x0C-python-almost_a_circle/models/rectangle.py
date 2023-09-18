@@ -61,3 +61,7 @@ class Rectangle(Base):
                 break
             string += "\n"
         print(string, end="")
+
+    def __str__(self):
+        """ func doc """
+        return f"[Rectangle] ({self.id}) \ {self.__x}/{self.__y} - {self.__width}/{self.__height}"
