@@ -43,3 +43,21 @@ class Rectangle(Base):
     def area(self):
         """ func doc """
         return self.__width * self.__height
+
+    def display(self):
+        """ func doc """
+        string = ""
+        for i in range(0, self.__height+self.__y):
+            if self.__y > i:
+                string += "\n"
+                continue
+            for j in range(0, self.__width+self.__x):
+                if j >= self.__x:
+                    string += "#"
+                else:
+                    string += " "
+            if i == self.__height+self.__y-1:
+                string += "\n"
+                break
+            string += "\n"
+        print(string, end="")
