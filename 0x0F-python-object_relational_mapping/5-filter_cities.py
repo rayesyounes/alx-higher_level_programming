@@ -23,9 +23,11 @@ if __name__ == "__main__":
 
     cursor.execute(query, params)
     rows = cursor.fetchall()
+    tuples = ()
 
     for row in rows:
-        print(row)
+        tuples += row
+    print(*tuples, sep=", ")
 
     cursor.close()
     db.close()
