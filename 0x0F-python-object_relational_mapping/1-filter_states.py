@@ -10,13 +10,15 @@ if __name__ == "__main__":
     db_password = sys.argv[2]  # "password"
     db_name = sys.argv[3]      # "db_name"
     port = 3306
+    query = "SELECT * FROM states WHERE name LIKE BINARY 'N%' \
+            ORDER BY id ASC"
 
     db = MySQLdb.connect(
         host=db_host, user=db_user, passwd=db_password, db=db_name, port=port
     )
     cursor = db.cursor()
 
-    cursor.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC")
+    cursor.execute(query)
     rows = cursor.fetchall()
 
     for row in rows:
