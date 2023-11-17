@@ -13,7 +13,8 @@ if __name__ == "__main__":
     port = 3306
 
     query = "SELECT name FROM cities WHERE state_id IN \
-            (SELECT id FROM states WHERE name LIKE BINARY %s) ORDER BY cities.id ASC"
+            (SELECT id FROM states WHERE name LIKE BINARY %s) \
+            ORDER BY cities.id ASC"
     params = (state_name,)
 
     db = MySQLdb.connect(
