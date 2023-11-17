@@ -11,7 +11,8 @@ if __name__ == "__main__":
     db_name = sys.argv[3]       # "db_name"
     state_name = sys.argv[4]    # "state_name"
     port = 3306
-    query = "SELECT * FROM states WHERE name LIKE BINARY %s ORDER BY id ASC"
+    query = "SELECT * FROM states WHERE name LIKE BINARY %s \
+            ORDER BY id ASC"
     params = (state_name,)
 
     db = MySQLdb.connect(
